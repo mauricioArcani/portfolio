@@ -2,44 +2,69 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro"
 import GitHubIcon from "../components/icons/GitHub.astro"
+import MailIcon from "../components/icons/Mail.astro"
 import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
 
 ---
 
-<Layout title="Bienvenido a Astro.">
-	<main>
-		<section class="w-full mx-auto lg:w-[740px] py-44">
+<Layout title="Portfolio de Marcos Arcani - Desarrollador Full Stack con +3 de experiencia ."
+	description="Contrata a marcos para darte soluciones en el desarrollo web"		
+>
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-24">
 		<img 
         	class="rounded-full w-12 h-12 mb-4"
         	src="/avatar.png" 
         	alt="marcos photo"
     	/>
-			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
-				Hey, soy Mauricio <a
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+				Hey, soy Marcos Arcani <a
 					href="https://www.linkedin.com/in/marcos-arcani" 
 					target="_blank"
 					rel="noopener"
 					class="flex justify-center items-center"><Badge>Disponible para trabajar</Badge>
 				</a>
 			</h1>
-			<h2 class="text-2xl text-wrap">
-				+6 años de experiencia. <span class="text-yellow-200/90 opacity-80">Desarrollador Web</span>. De La Paz, Bolivia 🇧🇴
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+				+3 años de experiencia. <span class="text-yellow-200/90 opacity-80">Desarrollador FullStack</span>. De La Paz, Bolivia
 			</h2>
 
-			<nav class="flex gap-x-2">
+			<nav class="flex gap-4 mt-8 flex-wrap">
 					
 					<SocialPill href="https://www.linkedin.com/in/marcos-arcani">
-						<LinkedInIcon class="w-6 h-6"/>
+						<LinkedInIcon class="size-4 lg:size-6"/>
 						LinkedIn	
 					</SocialPill>	
 					
-					<SocialPill href="https://www.linkedin.com/in/marcos-arcani">
-						<GitHubIcon class="w-6 h-6"/>
+					<SocialPill href="https://github.com/mauricioArcani">
+						<GitHubIcon class="size-4 lg:size-6"/>
 						GitHub	
 					</SocialPill>
-			<nav>
-		</section>
+					<SocialPill href="mailto:mauricio.arcani@gmail.com">
+						<MailIcon class="size-4 lg:size-6"/>
+						mauricio.arcani@gmail.com	
+					</SocialPill>
+
+			</nav>
+		</SectionContainer>
+		<SectionContainer id="experience">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<Briefcase class="size-8" />
+				Experiencia laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer id="proyectos">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<Briefcase class="size-8" />
+				Proyectos
+			</h2>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
