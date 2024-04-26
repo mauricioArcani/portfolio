@@ -1,14 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Badge from "../components/Badge.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro"
 import GitHubIcon from "../components/icons/GitHub.astro"
 import MailIcon from "../components/icons/Mail.astro"
+import CodeIcon  from "../components/icons/Code.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Experience from "../components/Experience.astro";
 import Briefcase from "../components/icons/Briefcase.astro";
+import Projects from "../components/Projects.astro";
 
 ---
 
@@ -59,12 +60,12 @@ import Briefcase from "../components/icons/Briefcase.astro";
 			</h2>
 			<Experience />
 		</SectionContainer>
-		<SectionContainer id="proyectos">
+		<SectionContainer id="projects">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
-				<Briefcase class="size-8" />
+				<CodeIcon class="size-8" />
 				Proyectos
 			</h2>
-			<Experience />
+			<Projects />
 		</SectionContainer>
 	</main>
 </Layout>

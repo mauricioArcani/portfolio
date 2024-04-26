@@ -1,0 +1,52 @@
+---
+import HTMLIcon from './icons/HTML.astro'
+import CSSIcon from './icons/CSS.astro'
+
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        class: "bg-white text-black",
+        icon: HTMLIcon
+    },
+    
+    CSS: {
+        name: "CSS",
+        class: "bg-white text-black",
+        icon: CSSIcon
+    },
+
+}
+const PROJECTS = [
+    {
+        title: "Preuniversitario",
+        description: "Lorem ipsum",
+        link: "https://sia.umsa.bo/preuniversitario",
+        github: "github.com",
+        image: "/projects/svgl.webp",
+        tags: [TAGS.HTML, TAGS.CSS]
+    }
+]
+---
+{
+    PROJECTS.map(({ title, description, tags, image }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {tags.map(tag =>(
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon  class="size-4"/>
+                            {tag.name}
+                        </span>
+                    </li>
+                ))
+                }
+            </ul>
+            <img 
+                class="rounded shadow-2xl shadow-white/10"
+                src={image}
+                alt={`Captura de imagen del proyecto ${image}`} />
+        </article>
+    ))
+}
